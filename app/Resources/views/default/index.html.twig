@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1>Welcome to URL shortener</h1>
+            </div>
+
+            <div id="status">
+                <p>
+                    Please enter the URL you'd like to shorten:
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Shorten it!">
+                    {{ form_end(form) }}
+                </p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p { margin: 0 0 1em 0; }
+    a { color: #0000F0; }
+    a:hover { text-decoration: none; }
+    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+    #container { padding: 2em; }
+    #welcome, #status { margin-bottom: 2em; }
+    #welcome h1 span { display: block; font-size: 75%; }
+
+    input[type=url] {
+        width: 90%;
+        padding: 20px;
+        background: #fff;
+        color: #000;
+        font-size: 20px;
+    }
+
+    input[type=submit] {
+        width: 50%;
+        background: #0088CC;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 20px;
+        border: none;
+        margin: 50px auto 0;
+        display: block;
+    }
+
+    label {
+        display: none;
+    }
+</style>
+{% endblock %}
